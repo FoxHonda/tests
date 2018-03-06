@@ -4,21 +4,20 @@
 <head>
 	<title>{% block page_title %}{% endblock %}</title>
 </head>
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 <body>
     <div class="content">
 {% include "snippets/mainapp/menu.tpl" %}
 
     <div class="container">
-
-
-    
     	{% block content %}
         {% endblock %}
     </div>
    
-    <footer>
-        &copy; Все права защищены
+
+    <footer class="navbar-dark bg-dark">
+        <span class="nav-item">&copy; Все права защищены</span>
     </footer>
     </div>
 </body>
