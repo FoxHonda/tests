@@ -1,10 +1,20 @@
+@width-img-posts: 200px;
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700');
 
 body,
 html {
     height: 100%;
-    margin: 0;
+}
 
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
 }
 
 body {
@@ -12,19 +22,40 @@ body {
     font-family: Geneva, Arial, Helvetica, sans-serif;
 }
 
-hr {
-    height: 1px;
-    background: brown;
+li {
+    list-style: none;
 }
 
 a,
 a:visited {
-    color: cadetblue;
+    color: #484848;
     text-decoration: none;
 }
 
 a:hover {
-    color: aquamarine;
+    color: #3b896f;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #a52b2b;
+    img {
+        margin-top: 20px;
+        margin-left: 200px;
+        width: 150px;
+    }
+
+}
+
+footer {
+    background-color: #f4eaed;
+    height: 50px;
+    border-top: 1px solid #a52b2b;
+    padding-top: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .content {
@@ -34,7 +65,7 @@ a:hover {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: justify;
     display: flex;
@@ -43,40 +74,32 @@ a:hover {
 
 .menu {
     list-style-type: none;
-    margin-top: 40px;
-    margin-right: 40px;
-    /*margin: 0;
-  	padding: 0;
 
-  	border-radius:  5px;
-  	text-align: center;
-  	min-height: 40px;*/
+    li {
+        display: inline;
+        margin-right: 50px;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    li a:hover {
+        background-color: #be2a57;
+        color: white;
+    }
+
+    a {
+        text-decoration: none;
+        color: brown;
+    }
+
+    a:visited {
+        color: brown;
+    }
 }
 
-li {
-    list-style: none;
-}
 
-.menu li {
-    display: inline;
-    margin-right: 50px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
 
-.menu li a:hover {
-    background-color: #be2a57;
-    color: white;
-}
 
-.menu a {
-    text-decoration: none;
-    color: brown;
-}
-
-.menu a:visited {
-    color: brown;
-}
 
 .product_items h2 {
     color: black;
@@ -88,6 +111,11 @@ li {
 }
 
 
+.posts img {
+    width: 270px;
+    height: 270px;
+}
+
 .product_items p {
     text-transform: capitalize;
     text-align: justify;
@@ -96,17 +124,18 @@ li {
 .catalogue {
     display: flex;
     justify-content: space-between;
+    img {
+        width: 170px;
+        height: 170px;
+    }
+
+    div {
+        text-align: center;
+        margin-bottom: 50px;
+    }
 }
 
-.catalogue img {
-    width: 170px;
-    height: 170px;
-}
 
-.catalogue div {
-    text-align: center;
-    margin-bottom: 50px;
-}
 
 .short_desc {
     color: #707070;
@@ -135,55 +164,11 @@ li {
     border: 1px solid transparent;
 }
 
-/*
-* Задать значения ширины и высоты для полей ввода.
-* Задать стили для текста, внутри полей input. ( Цвет текста, размер шрифта и т.д.).
-* Следите за тем, чтобы на странице всё выглядело гармонично, не выбирайте слишком резких цветов.
-*/
-
-input,
-textarea {
-    margin-left: 30px;
-    background-color: #d7ffc1;
-    color: #930;
-    border: none;
-    font-size: 18px;
-    text-transform: capitalize;
-}
-
-textarea {
-    width: 350px;
-    height: 200px;
-}
-
-label,
-h4 {
-    padding: 0px 30px;
-}
 
 
-.header {
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #a52b2b;
-}
 
-.header img {
-    margin-top: 20px;
-    margin-left: 200px;
-    width: 150px;
-}
 
-.footer {
-    background-color: #f4eaed;
-    height: 100px;
-    border-top: 1px solid #a52b2b;
-    padding-top: 30px;
-    padding-right: 30px;
-    display: flex;
-    justify-content: flex-end;
-}
+
 
 
 
@@ -191,26 +176,18 @@ h4 {
     display: flex;
 }
 
-.map {
-    width: 100%;
-    height: 374px;
-    margin-bottom: 30px;
-}
-
-.item img{
-    width: 300px;
-    height: 300px;
-}
 
 .posts {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    
+
     img {
-        width: 270px;
-        height: 270px;
+        width: @width-img-posts;
+        height: @width-img-posts;
     }
 
+    .item {
+        width: @width-img-posts;
+    }
 }
-
