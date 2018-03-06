@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block page_title %}
+Blog - Посты
+{% endblock %}
+
+{% block content %}
+<div class="posts">
+	{% for item in collection%}
+
+		{% include "snippets/posts/item.tpl" with title=item.title description=item.description id=item.id image=item.image %}
+
+	{% endfor%}
+</div>
+{% endblock %}

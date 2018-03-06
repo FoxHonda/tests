@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block page_title %}
+Blog - Пост {{ item.title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="item">
+    <h1>{{ item.title }}</h1>
+    <h4>{{ item.description }}</h4>
+    <p><a href="themes/{{ item.theme.id}}">{{ item.theme }}</a></p>
+    <img src="/media/{{ item.image }}" alt="{{ item.image }}">
+    <p>{{ item.posttext }}</p>
+</div>
+
+
+<div class="row">
+	{% for item in related%}
+
+		{% include "snippets/posts/item.tpl" with title=item.title description=item.description id=item.id image=item.image %}
+
+	{% endfor%}	
+</div>
+
+{% endblock %}

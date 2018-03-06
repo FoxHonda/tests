@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700');
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+
+}
+
+body {
+    /*background-color: #d7ffc1;/*#f8f8f8;*/
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+hr {
+    height: 1px;
+    background: brown;
+}
+
+a,
+a:visited {
+    color: cadetblue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: aquamarine;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    display: flex;
+    flex: 1;
+}
+
+.menu {
+    list-style-type: none;
+    margin-top: 40px;
+    margin-right: 40px;
+    /*margin: 0;
+  	padding: 0;
+
+  	border-radius:  5px;
+  	text-align: center;
+  	min-height: 40px;*/
+}
+
+li {
+    list-style: none;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.menu li a:hover {
+    background-color: #be2a57;
+    color: white;
+}
+
+.menu a {
+    text-decoration: none;
+    color: brown;
+}
+
+.menu a:visited {
+    color: brown;
+}
+
+.product_items h2 {
+    color: black;
+    size: 18px;
+    font-weight: 400;
+    background-color: #eaeaea;
+    text-align: center;
+
+}
+
+
+.product_items p {
+    text-transform: capitalize;
+    text-align: justify;
+}
+
+.catalogue {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalogue img {
+    width: 170px;
+    height: 170px;
+}
+
+.catalogue div {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.short_desc {
+    color: #707070;
+    size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+
+.detail_desc {
+    color: #484343;
+    size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+
+.big_img {
+    border: 1px solid #c06555;
+    width: 250px;
+    height: 250px;
+    margin-right: 20px;
+}
+
+.big_img:hover {
+    border: 1px solid transparent;
+}
+
+/*
+* Задать значения ширины и высоты для полей ввода.
+* Задать стили для текста, внутри полей input. ( Цвет текста, размер шрифта и т.д.).
+* Следите за тем, чтобы на странице всё выглядело гармонично, не выбирайте слишком резких цветов.
+*/
+
+input,
+textarea {
+    margin-left: 30px;
+    background-color: #d7ffc1;
+    color: #930;
+    border: none;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+textarea {
+    width: 350px;
+    height: 200px;
+}
+
+label,
+h4 {
+    padding: 0px 30px;
+}
+
+
+.header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #a52b2b;
+}
+
+.header img {
+    margin-top: 20px;
+    margin-left: 200px;
+    width: 150px;
+}
+
+.footer {
+    background-color: #f4eaed;
+    height: 100px;
+    border-top: 1px solid #a52b2b;
+    padding-top: 30px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+.desc {
+    display: flex;
+}
+
+.map {
+    width: 100%;
+    height: 374px;
+    margin-bottom: 30px;
+}
+
+.item img{
+    width: 300px;
+    height: 300px;
+}
+
+.posts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    img {
+        width: 270px;
+        height: 270px;
+    }
+
+}
+
