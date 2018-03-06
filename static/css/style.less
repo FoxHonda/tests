@@ -34,7 +34,7 @@ a:visited {
     text-decoration: none;
 }
 
-a:hover { 
+a:hover {
     color: #3b896f;
     text-decoration: none;
 }
@@ -66,7 +66,12 @@ footer {
     margin-bottom: @margin-top-bot;
     text-align: justify;
     display: flex;
+    flex-direction: column;
     flex: 1;
+    .row_direction {
+        display: flex;
+        flex-direction: row;    
+    }
 }
 
 
@@ -94,23 +99,38 @@ footer {
 
 
 .rigth-post-row {
-    max-width:@width-img-posts + @space-beetwen-items; 
-    img{
+    max-width: @width-img-posts + @space-beetwen-items;
+    img {
         width: @width-img-posts;
         height: @width-img-posts;
     }
+    
+    .item {
+        padding: 2px;
+    }       
+
+    .item:hover {
+        background-color: #f0f0f0;
+        border: 1px dotted #000;
+        padding: 1px;
+    }
 }
 
-.left-post-row{
+.left-post-row {
     min-width: @container-max-width /2;
     margin-right: @space-beetwen-items;
     img {
         width: @width-img-posts *1.5;
         padding: 0px @space-beetwen-items @space-beetwen-items 0px;
-        
     }
+
 }
 
-.float_left{
+.float_left {
     float: left;
+}
+
+.pagination-row {
+    display: flex;
+    justify-content: center;
 }

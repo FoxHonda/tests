@@ -5,11 +5,54 @@ Blog - Посты
 {% endblock %}
 
 {% block content %}
-<div class="posts">
-	{% for item in collection%}
 
-		{% include "snippets/posts/item.tpl" with title=item.title description=item.description id=item.id image=item.image %}
+	<div class="posts">
+		{% for item in collection%}
 
-	{% endfor%}
-</div>
+			{% include "snippets/posts/item.tpl" with title=item.title description=item.description id=item.id image=item.image %}
+
+		{% endfor%}
+
+
+	</div>
+
+	<div class="pagination-row">
+
+	    <nav aria-label="Page navigation example">
+
+	          <ul class="pagination">
+	            
+	            {% if collection.has_previous %}
+
+	                <li class="page-item"><a class="page-link" href="?page={{ collection.previous_page_number }}">Previous</a></li>
+
+	            {% endif %}
+
+	            {% for number in collection.paginator.page_range %}
+
+	            {% if number == collection.number %}
+
+	            <li class="page-item active"><a class="page-link" href="?page={{ number }}">{{ number }}</a></li>
+
+	            {% else %}
+
+	            <li class="page-item"><a class="page-link" href="?page={{ number }}">{{ number }}</a></li>
+
+	            {% endif %}
+
+	            {% endfor %}
+
+
+	            {% if collection.has_next %}
+
+	                <li class="page-item"><a class="page-link" href="?page={{ collection.next_page_number }}">Next</a></li>
+
+	            {% endif %}
+
+	        </ul>
+
+	    </nav>
+
+	</div>
+
 {% endblock %}
