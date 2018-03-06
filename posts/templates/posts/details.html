@@ -24,6 +24,7 @@ Blog - Пост {{ item.title }}
 
 
     <div class="rigth-post-row">
+        <h3>Похожие посты</h3>
     	{% for item in related%}
 
     		{% include "snippets/posts/item.tpl" with title=item.title description=item.description id=item.id image=item.image %}

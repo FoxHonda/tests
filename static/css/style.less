@@ -1,7 +1,7 @@
 @width-img-posts: 200px;
 @margin-top-bot: 30px;
 @space-beetwen-items: 20px;
-@container-max-width: 900px;
+@container-width: 900px;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700');
 
@@ -47,7 +47,7 @@ header {
 
 footer {
     color: #fcf8ed;
-    padding: 30px;
+    padding: @margin-top-bot;
     display: flex;
     justify-content: flex-end;
 }
@@ -60,7 +60,7 @@ footer {
 }
 
 .container {
-    max-width: @container-max-width;
+    max-width: @container-width;
     margin: 0 auto;
     margin-top: @margin-top-bot;
     margin-bottom: @margin-top-bot;
@@ -117,7 +117,7 @@ footer {
 }
 
 .left-post-row {
-    min-width: @container-max-width /2;
+    min-width: @container-width /2;
     margin-right: @space-beetwen-items;
     img {
         width: @width-img-posts *1.5;

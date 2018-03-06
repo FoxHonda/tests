@@ -4,7 +4,7 @@ from . import models
 
 def index(request):
 	posts = models.Post.objects.all()
-	paginator = Paginator(posts, 9)
+	paginator = Paginator(posts, 12)
 	page = request.GET.get('page')
 	try:
 		collection = paginator.get_page(page)	
