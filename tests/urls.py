@@ -32,7 +32,10 @@ urlpatterns = [
     path('admin/', admin.site.urls, name='admin'),
     path('tutorial/', mainapp.tutorial, name='tutorial'),
     path('contacts/', mainapp.contacts, name='contacts'),
-    path('posts/', posts.index, name='posts'),
-    re_path(r'^posts/(?P<pk>[0-9]+)/$', posts.details, name='details'),
     path('', mainapp.main, name = 'name'),
+    path('posts/', posts.index, name='posts'),
+    #re_path(r'^posts/(?P<pk>[0-9]+)/$', posts.details, name='details'),
+    path('', include('posts.urls')),
+    path('', include('themes.urls'))
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

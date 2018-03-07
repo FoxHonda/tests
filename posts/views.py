@@ -23,3 +23,7 @@ def details(request, pk):
 	related_posts = models.Post.objects.filter(theme=posts.theme).exclude(id=posts.id)[:3]
 	context = {'item' : posts, 'related':related_posts}
 	return render(request, 'posts/details.html', context)
+
+
+def create(request):
+	return render(request, 'posts/edit.html', {})

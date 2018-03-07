@@ -11,7 +11,11 @@ Blog - Пост {{ item.title }}
     <div class="left-post-row">
         <h3>{{ item.title }}</h3>
         <h4>{{ item.description }}</h4>
-        <p><a href="themes/{{ item.theme.id}}">{{ item.theme }}</a></p>
+        {% if item.theme %}
+            <p><a href="{% url 'theme_details' pk=item.theme.id %}">{{ item.theme }}</a></p>
+        {% else %}
+            <p>&nbsp;</p>  
+        {% endif %}  
         <div class="float_left">
             {% if image %}
                 <img src="/media/{{ item.image }}" alt="{{ item.image }}">

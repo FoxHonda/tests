@@ -1,12 +1,17 @@
 {% load static %}
 <div class="item">
-	<a href="{% url 'details' pk=id %}">
-	{% if image %}
-		<img src="/media/{{ image }}" alt="{{ image }}">
+	<a href="{% url 'details' pk=item.id %}">
+	{% if item.image %}
+		<img src="/media/{{ item.image }}" alt="{{ item.image }}">
 	{% else %}
 		<img src="{% static 'pictures/def.png' %}" alt="default picture">
 	{% endif %}
-	<h4>{{ title }}</h4>
-	<p>{{ description }}</p>
+	<h4>{{ item.title }}</h4>
+	{% if item.theme %}
+		<label>{{ item.theme }}</label>
+	{% else	%}	
+		<label>&nbsp;</label>
+	{% endif %}
+	<p>{{ item.description }}</p>
 	</a>
 </div>

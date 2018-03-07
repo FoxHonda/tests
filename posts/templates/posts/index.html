@@ -9,7 +9,7 @@ Blog - Посты
 	<div class="posts">
 		{% for item in collection%}
 
-			{% include "snippets/posts/item.tpl" with title=item.title description=item.description id=item.id image=item.image %}
+			{% include "snippets/posts/item.tpl" with item=item %}
 
 		{% endfor%}
 
