@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import models
+from . import forms
 
 def index(request):
 	posts = models.Post.objects.all()
@@ -26,4 +27,11 @@ def details(request, pk):
 
 
 def create(request):
-	return render(request, 'posts/edit.html', {})
+	form = forms.PostForm()
+	if request.method == 'POST':
+		form = forms.PostForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('/')
+	context = {'form':form}
+	return render(request, 'posts/edit.html', context)
